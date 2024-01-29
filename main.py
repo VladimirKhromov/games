@@ -5,10 +5,9 @@ import game_2
 #  Угадай число
 import game_3
 
-GAMES = {"Угадай число": game_1,
-         "Тест 2": game_2,
-         "Тест 3": game_3,
-         }
+GAME_LIST = [game_1, game_2, game_3]
+
+GAMES = {f'{game.GAME_NAME}': game for game in GAME_LIST}
 
 
 def show_game() -> None:
@@ -30,7 +29,7 @@ def main():
     while True:
         dec()
         show_game()
-        number_game = input("Введите число для выбора игры, или \"выход\" для прекращения: ")
+        number_game = input("Введите число для выбора игры, или \"выход\" для завершения: ")
         if number_game.lower() == "выход":
             print("До встречи!")
             break

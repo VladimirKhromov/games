@@ -1,6 +1,7 @@
 # Игра угадай число
 from random import randint
 
+GAME_NAME = "Угадай число"
 LEVELS = {"Очень Легко": 4,
           "Легко": 32,
           "Нормально": 128,
@@ -16,7 +17,7 @@ def get_secret_number(n: int) -> int:
 
 def check_numbers(guess: int, secret_number: int) -> bool:
     if guess == secret_number:
-        print("Ура, вы выйграли!")
+        print("Ура, вы победили!")
         return True
     elif guess > secret_number:
         print("Секретное число меньше, чем предположение")

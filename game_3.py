@@ -1,3 +1,6 @@
+
+GAME_NAME = 'test'
+
 def game_start() -> None:
     print("Запустить игру 3")
 
