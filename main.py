@@ -6,21 +6,23 @@ import game_2
 import game_3
 
 GAMES = {"Угадай число": game_1,
-        "Тест 2": game_2,
-        "Тест 3": game_3,
-        }
+         "Тест 2": game_2,
+         "Тест 3": game_3,
+         }
 
 
 def show_game() -> None:
     for i, key in enumerate(GAMES.keys()):
         print(f"{i + 1}. {key}")
 
+
 def run_game(game_number):
     for i, key in enumerate(GAMES.keys()):
         if game_number - 1 == i:
             GAMES[key].game_start()
 
-def dec(s:str = "#", n:int = 60):
+
+def dec(s: str = "#", n: int = 60):
     print(s[0] * n)
 
 
@@ -32,7 +34,7 @@ def main():
         if number_game.lower() == "выход":
             print("До встречи!")
             break
-        elif int(number_game) not in range(1, len(GAMES)+1):
+        elif int(number_game) not in range(1, len(GAMES) + 1):
             print("Такой игры нет, попробуй еще!")
             continue
         dec()
