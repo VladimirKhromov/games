@@ -2,6 +2,7 @@
 from random import randint
 
 GAME_NAME = "Угадай число"
+
 LEVELS = {"Очень Легко": 4,
           "Легко": 32,
           "Нормально": 128,
@@ -39,22 +40,19 @@ def game(max_number: int = 128) -> None:
 
 def game_start() -> None:
     while True:
-        print("Выберете уровень сложности")
         for i, key in enumerate(LEVELS.keys()):
             print(f"{i + 1}. {key}")
-        level = int(input("Введите цифру: "))
-        if level < 1 or level > len(LEVELS):
-            print("Выбрали неверную цифру, введите еще раз")
+        user_response = input("Выберете уровень сложности (или 'выход' для завершения): ")
+        if user_response == 'выход':
+            print("До свидания!")
+            break
+
+        if int(user_response) not in range(1, len(LEVELS) + 1):
+            print("Некорректный выбор. Попробуйте снова.")
             continue
         for i, key in enumerate(LEVELS.keys()):
-            if level - 1 == i:
+            if int(user_response) - 1 == i:
                 game(LEVELS[key])
-
-        a = input("Сыграем в \"угадай число\' еще раз?! (да/нет): ")
-        if a.lower() == "да":
-            continue
-        else:
-            break
 
 
 if __name__ == "__main__":
