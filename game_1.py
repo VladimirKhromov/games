@@ -21,10 +21,10 @@ def check_numbers(guess: int, secret_number: int) -> bool:
         print("Ура, вы победили!")
         return True
     elif guess > secret_number:
-        print("Секретное число меньше, чем предположение")
+        print("Уменьши!")
         return False
     elif guess < secret_number:
-        print("Секретное число больше, чем предположение")
+        print("Увеличь!")
         return False
 
 

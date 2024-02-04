@@ -1,8 +1,8 @@
 #  Угадай число
 import game_1
-#  Угадай число
+#  Камень, ножницы, бумага
 import game_2
-#  Угадай число
+#  Виселица
 import game_3
 
 GAME_LIST = [game_1, game_2, game_3]
